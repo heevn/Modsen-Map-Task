@@ -3,7 +3,7 @@ import { publicRoutes, privateRoutes } from "./routes"
 import { MAP_ROUTE, LOGIN_ROUTE } from "./utils/consts"
 
 
-function AppRouter() {
+export default function AppRouter() {
     const user = false
     return user ? (
 		<Routes>
@@ -21,5 +21,3 @@ function AppRouter() {
 		</Routes>
 	)
 }
-
-export default AppRouter
