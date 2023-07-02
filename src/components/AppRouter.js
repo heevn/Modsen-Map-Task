@@ -1,10 +1,13 @@
 import {Route, Routes, Navigate} from "react-router-dom"
 import { publicRoutes, privateRoutes } from "./routes"
 import { MAP_ROUTE, LOGIN_ROUTE } from "./utils/consts"
+import { useContext } from "react";
+import { Context } from "..";
 
 
 export default function AppRouter() {
-    const user = false
+	const {auth} = useContext(Context);
+	const user = true;
     return user ? (
 		<Routes>
 			{privateRoutes.map(({path, Component}) => (
