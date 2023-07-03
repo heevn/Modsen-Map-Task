@@ -4,7 +4,6 @@ import { MAP_ROUTE, LOGIN_ROUTE } from "./utils/consts"
 import { useContext } from "react";
 import { Context } from "..";
 
-
 export default function AppRouter() {
 	const {auth} = useContext(Context);
 	const user = true;
