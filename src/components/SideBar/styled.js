@@ -27,13 +27,3 @@ export const LogWrapper = styled(Box)`
   flex-direction: column;
   row-gap: 5px;
 `
-
-export const Wrapper = styled(Box)`
-  display: flex;
-  flex-direction: row;
-`
-
-export const MapWrapper = styled(Box)`
-  display: flex;
-  width: 100%;
-`
