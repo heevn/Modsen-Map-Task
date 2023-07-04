@@ -12,17 +12,17 @@ export default function Map() {
   return (
     <Wrapper>
       <SideBar></SideBar>
-        <MapWrapper>
-          {isLoaded ?
-            <GoogleMap 
-              center={mapCenter} 
-              zoom={15} 
-              mapContainerStyle={{width:"100%", height:"100%"}}
-            >
-            </GoogleMap>
-            :
-            loadError
-          }
+      <MapWrapper>
+        {isLoaded ?
+          <GoogleMap 
+            center={mapCenter} 
+            zoom={15} 
+            mapContainerStyle={{width:"100%", height:"100%"}}
+          >
+          </GoogleMap>
+          :
+          loadError
+        }
       </MapWrapper>
     </Wrapper>
   )
