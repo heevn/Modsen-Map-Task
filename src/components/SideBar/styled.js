@@ -10,7 +10,7 @@ export const SideBarWrapper = styled(Box)`
   align-items: center;
   row-gap: 40px;
   justify-content: space-between;
-`
+`;
 
 export const ButtonsWrapper = styled(Box)`
   display: flex;
@@ -18,12 +18,13 @@ export const ButtonsWrapper = styled(Box)`
   flex-direction: column;
   width: auto;
   align-items: center;
-`
+`;
 
 export const LogWrapper = styled(Box)`
   display: flex;
   position: absolute;
-  top: 850px; left: 90px;
+  top: 800px;
+  left: 8px;
   flex-direction: column;
   row-gap: 5px;
-`
+`;
