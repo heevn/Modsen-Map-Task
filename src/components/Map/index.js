@@ -2,8 +2,11 @@ import { MapWrapper, Wrapper } from "./styled";
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 import SideBar from "../SideBar";
 import { useCallback, useMemo, useRef, useState } from "react";
+import FavBar from "../FavBar";
+import { Collapse } from "@mui/material";
 
 export default function Map() {
+  const [favBarShown, setFavBarShown] = useState(false);
   const mapRef = useRef();
   const mapCenter = useMemo(() => ({ lat: 53.893009, lng: 27.567444 }), []);
   const options = useMemo(
@@ -31,11 +34,15 @@ export default function Map() {
     googleMapsApiKey: process.env.REACT_APP_MAPS_API,
   });
 
-  const onLoad = useCallback((map) => {mapRef.current = map; console.log(map)}, []);
+  const onLoad = useCallback((map) => {
+    mapRef.current = map;
+    console.log(map);
+  }, []);
 
   return (
     <Wrapper>
-      <SideBar></SideBar>
+      <SideBar setFavBarShown={setFavBarShown} />
+      <FavBar setFavBarShown={setFavBarShown} isOpen={favBarShown}/>
       <MapWrapper>
         {isLoaded ? (
           <GoogleMap

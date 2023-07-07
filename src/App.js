@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import Map from "./components/Map/index"
+import Map from "./components/Map/index";
 
 function App() {
   return (

@@ -9,21 +9,22 @@ import { ButtonsWrapper, LogWrapper, SideBarWrapper } from "./styled";
 import { Button, Avatar, Grow } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import MappieLogo from "../../Group.svg";
+import MappieLogo from "../../assets/Group.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { logIn, logOut } from "../../store/auth/auth";
+import FavBar from "../FavBar";
 
-export default function SideBar() {
+export default function SideBar({ setFavBarShown }) {
   const [isShown, setIsShown] = useState(false);
   const auth = getAuth();
-  const user = useSelector((state)=> state.auth);
+  const user = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const provider = new GoogleAuthProvider();
 
   const login = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        dispatch(logIn({uid: result.user.uid, image: result.user.photoURL}));
+        dispatch(logIn({ uid: result.user.uid, image: result.user.photoURL }));
       })
       .catch((error) => {});
   };
@@ -44,7 +45,11 @@ export default function SideBar() {
         <Button variant="contained">
           <SearchIcon />
         </Button>
-        <Button variant="outlined" color="error">
+        <Button
+          variant="outlined"
+          color="error"
+          onClick={() => setFavBarShown(true)}
+        >
           <BookmarkIcon />
         </Button>
       </ButtonsWrapper>

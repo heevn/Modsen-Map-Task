@@ -10,6 +10,9 @@ export const SideBarWrapper = styled(Box)`
   align-items: center;
   row-gap: 40px;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  background-color: white;
 `;
 
 export const ButtonsWrapper = styled(Box)`
